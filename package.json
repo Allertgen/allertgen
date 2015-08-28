@@ -1,21 +1,16 @@
 {
-  "name": "plzhelp.me",
+  "name": "allertgen",
   "version": "0.0.1",
-  "description": "An app to link general contractors to customers.",
+  "description": "restaurant allergy info",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Pluto-nic/plzHelp.me.git"
+    "type": "git"
   },
-  "author": "Plutonic",
+  "author": "Dicks",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Pluto-nic/plzHelp.me/issues"
-  },
-  "homepage": "https://github.com/Pluto-nic/plzHelp.me#readme",
   "dependencies": {
     "angular": "^1.4.4",
     "angular-ui-router": "^0.2.15",
