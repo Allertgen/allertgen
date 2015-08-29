@@ -1,13 +1,19 @@
-<html>
-<header>Allertgen</header>
+<html ng-app='app'>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+  <title>AllertGen</title>
+</head>
 <body>
 
-
+  <div ui-view></div>
   <!-- remember to load angular library files before angular files -->
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
   
   <!-- load dependent angular files here -->
-  
+  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="landingPage/landingPage.js"></script>
+
 </body>
 </html>
