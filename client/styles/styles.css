@@ -1,7 +1,12 @@
 #main-header{
   display: inline;
+  float: left;
 }
 
 #login{
   float: right;
+}
+
+#search-bars{
+  float:left;
 }

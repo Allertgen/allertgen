@@ -1,4 +1,11 @@
 <div ng-controller="landingPageController">
-  <div id='main-header'><b>Allertgen</b></div>
-  <button id='login' ng-click="login()">Log in</button>
+  <div id='top-bar'>
+    <div id='main-header'><b>Allertgen</b></div>
+    <form id='search-bars'>
+      <input type='text' ng-model='restaurant' placeholder='sushi, thai food, etc...'>
+      <input type='text' ng-model='location' placeholder='address, city, state, zip, etc...'>
+      <input type='submit' ng-click='search(restaurant, location)' value='Search'>
+    </form>
+    <button id='login' ng-click="login()">Log in</button>
+  </div>
 </div>
