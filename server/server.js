@@ -3,6 +3,10 @@ var express = require('express');
 var path = require('path');
 var app = express();
 
+//sequelize database
+var models = require('../db/orm-model.js');
+
+
 //serve up static index.html file by telling express to look in the client folder
 app.use('/', express.static("./client"));
 
