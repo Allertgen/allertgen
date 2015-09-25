@@ -2,7 +2,9 @@
 var express = require('express');
 var path = require('path');
 var app = express();
+var cors = require('cors');
 
+app.use(cors());
 //serve up static index.html file by telling express to look in the client folder
 app.use('/', express.static("./client"));
 
