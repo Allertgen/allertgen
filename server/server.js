@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var app = express();
 var cors = require('cors');
+var database = require('./db/orm-model.js');
 
 app.use(cors());
 //serve up static index.html file by telling express to look in the client folder
@@ -38,3 +39,4 @@ app.get('/yelp', function(req, res){
 app.set('port', process.env.PORT || 8080);
 app.listen(app.get('port'));
 console.log("App listening on port");
+database(); // we probably won't need this later but yeah

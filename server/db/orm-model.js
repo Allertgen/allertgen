@@ -1,4 +1,3 @@
-'use strict';
 var db = require('./database');
 var Sequelize = require('sequelize');
 
@@ -11,13 +10,12 @@ module.exports = function(){
       notNull: true,
       primaryKey: true
     }, 
-    email: Sequelize.STRING,
-    picture: Sequelize.STRING,
-    name: Sequelize.STRING,
-    nickname: Sequelize.STRING
+    gluten: Sequelize.BOOLEAN,
+    soy: Sequelize.BOOLEAN,
+    dairy: Sequelize.BOOLEAN
   });
 
-  var Activity = db.define('Activity', {
+  var Restaurant = db.define('Restaurant', {
     title: {
       type: Sequelize.STRING,
       notEmpty: true,
@@ -42,11 +40,11 @@ module.exports = function(){
 
   // We don't need create a join table when we're using an ORM 
   // Use a method to set relationships
-  Activity.belongsToMany(User, {through: 'UserActivity'});
-  User.belongsToMany(Activity, {through: 'UserActivity'});
+  Restaurant.belongsToMany(User, {through: 'UserRestaurant'});
+  User.belongsToMany(Restaurant, {through: 'UserRestaurant'});
 
-  Activity.belongsTo(User, {as:'ownerId'});
+  Restaurant.belongsTo(User, {as:'ownerId'});
 
   db.sync();
-  return {User:User, Activity: Activity};
+  return {User:User, Restaurant: Restaurant};
 };
