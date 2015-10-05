@@ -10,9 +10,6 @@ module.exports = function(){
       notNull: true,
       primaryKey: true
     }, 
-    gluten: Sequelize.BOOLEAN,
-    soy: Sequelize.BOOLEAN,
-    dairy: Sequelize.BOOLEAN
   });
 
   var Restaurant = db.define('Restaurant', {
@@ -21,18 +18,16 @@ module.exports = function(){
       notEmpty: true,
       notNull: true
     },
-    description: {
-      type: Sequelize.STRING,
-      notEmpty: true,
-      notNull: true
-    },
     location: {
       type: Sequelize.STRING
     },
-    keywords: {
-      type: Sequelize.STRING
+    glutenFree: {
+      type: Sequelize.BOOLEAN
     },
-    active: {
+    dairyFree: {
+      type: Sequelize.BOOLEAN
+    },
+    soyFree: {
       type: Sequelize.BOOLEAN
     }
     //sequelize automatically makes createdAt and updatedAt columns

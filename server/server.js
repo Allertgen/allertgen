@@ -4,6 +4,8 @@ var path = require('path');
 var app = express();
 var cors = require('cors');
 var database = require('./db/orm-model.js');
+var database = database();
+var restaurantTable = database.Restaurant;
 
 app.use(cors());
 //serve up static index.html file by telling express to look in the client folder
@@ -20,6 +22,15 @@ var yelp = require("yelp").createClient({
 module.exports = 'yelp';
 //yelp API call using request sent from front end
 app.get('/yelp', function(req, res){
+
+  //testing the upsert shit u naw?
+  restaurantTable.upsert({
+    title: "Test Restaurant",//req.body.user_id,
+    location: "Test Location",//req.body.email,
+    glutenFree: false,//req.body.picture || req.body.gravatar,
+    dairyFree: false,
+    soyFree: false});
+
   yelp.search({term: req.query.restaurant, location: req.query.location}, function(error, data) {
     if (error){
       console.error(error);
@@ -39,4 +50,4 @@ app.get('/yelp', function(req, res){
 app.set('port', process.env.PORT || 8080);
 app.listen(app.get('port'));
 console.log("App listening on port");
-database(); // we probably won't need this later but yeah
+//database(); // we probably won't need this later but yeah
